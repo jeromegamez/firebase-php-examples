@@ -1,0 +1,18 @@
+#!/usr/bin/env php
+<?php
+
+require __DIR__.'/vendor/autoload.php';
+
+use Gamez\Kreait\Firebase\Samples\Console\Application;
+use Symfony\Component\Dotenv\Dotenv;
+
+$dotenv = new Dotenv();
+$dotenv->load(__DIR__.'/.env');
+
+$application = new Application();
+
+try {
+    $application->run();
+} catch (\Throwable $e) {
+    echo 'Error: '.$e->getMessage().PHP_EOL;
+}

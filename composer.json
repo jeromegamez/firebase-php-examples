@@ -1,0 +1,27 @@
+{
+    "name": "gamez/firebase-examples",
+    "license": "MIT",
+    "description": "Examples for using https://github.com/kreait/firebase-php",
+    "require": {
+        "fzaninotto/faker": "^1.7",
+        "kreait/firebase-php": "^4.2",
+        "symfony/console": "^4.0",
+        "symfony/dotenv": "^4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Gamez\\Kreait\\Firebase\\Samples\\": "src"
+        }
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "@php -r \"file_exists('.env') || copy('.env.dist', '.env');\""
+        ],
+        "post-update-cmd": [
+            "@php -r \"file_exists('.env') || copy('.env.dist', '.env');\""
+        ]
+    },
+    "config": {
+        "sort-packages": true
+    }
+}

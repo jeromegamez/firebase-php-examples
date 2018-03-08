@@ -1,0 +1,4 @@
+/vendor
+
+/.env
+/google-service-account.json
