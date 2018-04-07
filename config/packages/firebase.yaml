@@ -1,0 +1,5 @@
+kreait_firebase:
+  projects:
+    default:
+      credentials: '%env(FIREBASE_CREDENTIALS_PATH)%'
+      alias: 'firebase'

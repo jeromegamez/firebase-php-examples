@@ -1,4 +1,10 @@
-/vendor
+###> app ###
+credentials.json
+###< app ###
 
+###> symfony/framework-bundle ###
 /.env
-/google-service-account.json
+/public/bundles/
+/var/
+/vendor/
+###< symfony/framework-bundle ###
