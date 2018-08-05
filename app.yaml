@@ -1,0 +1,16 @@
+runtime: php
+env: flex
+
+runtime_config:
+  document_root: public
+  front_controller_file: index.php
+
+env_variables:
+    APP_ENV: "prod"
+
+manual_scaling:
+  instances: 1
+resources:
+  cpu: 1
+  memory_gb: 0.5
+  disk_size_gb: 10
