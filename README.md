@@ -30,9 +30,10 @@ bin/console server:start
 ## Available commands
 
 ```
-bin/console app:create-user       # Create a Firebase user
-bin/console app:fcm:send-message  # Send an FCM message
-bin/console app:reset-project     # Reset parts of a Firebase project to their initial state
+bin/console app:create-user                  # Creates a Firebase user
+bin/console app:fcm:send-message             # Send an FCM message
+bin/console app:remote-config:list-versions  # Lists all remote config versions
+bin/console app:reset-project                # Reset parts of a Firebase project to its initial state
 ```
 
 ## Deploying to Google Cloud Engine
