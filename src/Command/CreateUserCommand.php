@@ -30,7 +30,7 @@ class CreateUserCommand extends ContainerAwareCommand
             'photo' => $io->ask('Photo URL'),
             'email' => $email = $io->ask('Email'),
             'emailverified' => $email && $io->confirm('Is the email address verified?', false),
-            'phoneNumber' => $io->ask('Phone Number')
+            'phoneNumber' => $io->ask('Phone Number'),
         ];
 
         $properties = array_filter($properties, function ($value) {
@@ -43,6 +43,7 @@ class CreateUserCommand extends ContainerAwareCommand
             $user = $firebase->getAuth()->createUser($properties);
         } catch (AuthException $e) {
             $io->error($e->getMessage());
+
             return 1;
         }
 

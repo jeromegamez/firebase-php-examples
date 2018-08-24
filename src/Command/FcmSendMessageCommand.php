@@ -3,16 +3,11 @@
 namespace App\Command;
 
 use Kreait\Firebase\Messaging\ConditionalMessage;
-use Kreait\Firebase\Messaging\Message;
 use Kreait\Firebase\Messaging\MessageToRegistrationToken;
 use Kreait\Firebase\Messaging\MessageToTopic;
-use Kreait\Firebase\Messaging\Notification;
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
-use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Exception\InvalidArgumentException;
-use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
-use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Style\SymfonyStyle;
 
@@ -59,7 +54,7 @@ class FcmSendMessageCommand extends ContainerAwareCommand
 
         $message = $message->withNotification([
             'title' => $io->ask('Please enter the title of your message'),
-            'body' => $io->ask('Please enter the body of your message')
+            'body' => $io->ask('Please enter the body of your message'),
         ]);
 
         $responseData = $messaging->send($message);
