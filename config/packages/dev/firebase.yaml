@@ -1,4 +1,4 @@
 kreait_firebase:
     projects:
         default:
-            credentials: '%kernel.project_dir%/%env(FIREBASE_CREDENTIALS_PATH)%'
+            credentials: '%env(FIREBASE_CREDENTIALS_PATH)%'
