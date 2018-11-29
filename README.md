@@ -12,6 +12,7 @@ actively follow best practices for neither Symfony nor Firebase 😅
 ```bash
 git clone git@github.com:jeromegamez/firebase-php-examples.git
 cd firebase-php-examples
+composer install
 cp .env.dist .env
 # Set FIREBASE_CREDENTIALS_PATH with the path to your credentials file
 bin/console list app
