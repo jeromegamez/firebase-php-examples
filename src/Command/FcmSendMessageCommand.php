@@ -2,18 +2,28 @@
 
 namespace App\Command;
 
-use Kreait\Firebase\Messaging\ConditionalMessage;
-use Kreait\Firebase\Messaging\MessageToRegistrationToken;
-use Kreait\Firebase\Messaging\MessageToTopic;
-use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
+use Kreait\Firebase;
+use Kreait\Firebase\Messaging\CloudMessage;
+use Kreait\Firebase\Messaging\MessageTarget;
+use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Exception\InvalidArgumentException;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Style\SymfonyStyle;
 
-class FcmSendMessageCommand extends ContainerAwareCommand
+class FcmSendMessageCommand extends Command
 {
     protected static $defaultName = 'app:fcm:send-message';
+
+    /** @var Firebase */
+    private $firebase;
+
+    public function __construct(Firebase $firebase)
+    {
+        $this->firebase = $firebase;
+
+        parent::__construct();
+    }
 
     protected function configure()
     {
@@ -24,12 +34,12 @@ class FcmSendMessageCommand extends ContainerAwareCommand
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $messaging = $this->getContainer()->get('kreait_firebase.default')->getMessaging();
+        $messaging = $this->firebase->getMessaging();
 
         $io = new SymfonyStyle($input, $output);
 
         $target = $io->choice('Please select a target', ['Topic', 'Condition', 'Registration Token']);
-        $validator = function ($answer) use ($target) {
+        $validator = static function ($answer) use ($target) {
             if (empty($answer)) {
                 throw new InvalidArgumentException('The '.$target.' must not be empty');
             }
@@ -40,16 +50,18 @@ class FcmSendMessageCommand extends ContainerAwareCommand
         switch ($target) {
             case 'Topic':
                 $topic = $io->ask('Please enter the name of the topic', null, $validator);
-                $message = MessageToTopic::create($topic);
+                $message = CloudMessage::withTarget(MessageTarget::TOPIC, $topic);
                 break;
             case 'Condition':
                 $condition = $io->ask('Please enter the condition', null, $validator);
-                $message = ConditionalMessage::create($condition);
+                $message = CloudMessage::withTarget(MessageTarget::CONDITION, $condition);
                 break;
             case 'Registration Token':
                 $registrationToken = $io->ask('Please enter the registration token', null, $validator);
-                $message = MessageToRegistrationToken::create($registrationToken);
+                $message = CloudMessage::withTarget(MessageTarget::TOKEN, $registrationToken);
                 break;
+            default:
+                throw new InvalidArgumentException("Invalid message target {$target}");
         }
 
         $message = $message->withNotification([

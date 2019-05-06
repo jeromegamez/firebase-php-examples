@@ -2,15 +2,26 @@
 
 namespace App\Command;
 
+use Kreait\Firebase;
 use Kreait\Firebase\Exception\AuthException;
-use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
+use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Style\SymfonyStyle;
 
-class CreateUserCommand extends ContainerAwareCommand
+class CreateUserCommand extends Command
 {
     protected static $defaultName = 'app:create-user';
+
+    /** @var Firebase */
+    private $firebase;
+
+    public function __construct(Firebase $firebase)
+    {
+        $this->firebase = $firebase;
+
+        parent::__construct();
+    }
 
     protected function configure()
     {
@@ -33,14 +44,12 @@ class CreateUserCommand extends ContainerAwareCommand
             'phoneNumber' => $io->ask('Phone Number'),
         ];
 
-        $properties = array_filter($properties, function ($value) {
+        $properties = array_filter($properties, static function ($value) {
             return null !== $value;
         });
 
-        $firebase = $this->getContainer()->get('kreait_firebase.default');
-
         try {
-            $user = $firebase->getAuth()->createUser($properties);
+            $user = $this->firebase->getAuth()->createUser($properties);
         } catch (AuthException $e) {
             $io->error($e->getMessage());
 

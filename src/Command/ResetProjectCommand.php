@@ -2,16 +2,26 @@
 
 namespace App\Command;
 
-use Google\Cloud\Storage\StorageObject;
+use Kreait\Firebase;
 use Kreait\Firebase\Database\RuleSet;
-use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
+use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Style\SymfonyStyle;
 
-class ResetProjectCommand extends ContainerAwareCommand
+class ResetProjectCommand extends Command
 {
     protected static $defaultName = 'app:reset-project';
+
+    /** @var Firebase */
+    private $firebase;
+
+    public function __construct(Firebase $firebase)
+    {
+        $this->firebase = $firebase;
+
+        parent::__construct();
+    }
 
     protected function configure()
     {
@@ -22,29 +32,27 @@ class ResetProjectCommand extends ContainerAwareCommand
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $firebase = $this->getContainer()->get('kreait_firebase.default');
-
         $io = new SymfonyStyle($input, $output);
 
         if ($io->confirm('Reset database rules?', false)) {
-            $firebase->getDatabase()->updateRules(RuleSet::default());
+            $this->firebase->getDatabase()->updateRules(RuleSet::default());
             $io->success('Done!');
         }
 
         if ($io->confirm('Empty realtime database?', false)) {
-            $firebase->getDatabase()->getReference('/')->remove();
+            $this->firebase->getDatabase()->getReference('/')->remove();
             $io->success('Done!');
         }
 
         if ($io->confirm('Empty cloud storage?', false)) {
-            array_map(function (StorageObject $object) {
+            foreach ($this->firebase->getStorage()->getBucket()->objects() as $object) {
                 $object->delete();
-            }, iterator_to_array($firebase->getStorage()->getBucket()->objects()));
+            }
             $io->success('Done!');
         }
 
         if ($io->confirm('Delete all users?', false)) {
-            $auth = $firebase->getAuth();
+            $auth = $this->firebase->getAuth();
 
             foreach ($auth->listUsers() as $user) {
                 $auth->deleteUser($user->uid);

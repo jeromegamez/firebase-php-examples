@@ -2,15 +2,26 @@
 
 namespace App\Command;
 
-use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
+use Kreait\Firebase;
+use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Style\SymfonyStyle;
 
-class ListRemoteConfigVersionsCommand extends ContainerAwareCommand
+class ListRemoteConfigVersionsCommand extends Command
 {
     protected static $defaultName = 'app:remote-config:list-versions';
+
+    /** @var Firebase */
+    private $firebase;
+
+    public function __construct(Firebase $firebase)
+    {
+        $this->firebase = $firebase;
+
+        parent::__construct();
+    }
 
     protected function configure()
     {
@@ -23,7 +34,6 @@ class ListRemoteConfigVersionsCommand extends ContainerAwareCommand
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $io = new SymfonyStyle($input, $output);
-        $firebase = $this->getContainer()->get('kreait_firebase.default');
 
         $headers = ['#', 'Updated at', 'Updated by', 'Type', 'Origin'];
         $rows = [];
@@ -32,7 +42,7 @@ class ListRemoteConfigVersionsCommand extends ContainerAwareCommand
             'limit' => $input->getOption('limit'),
         ]);
 
-        foreach ($firebase->getRemoteConfig()->listVersions($query) as $version) {
+        foreach ($this->firebase->getRemoteConfig()->listVersions($query) as $version) {
             $rows[] = [
                 $version->versionNumber(),
                 $version->updatedAt()->format('Y-m-d H:i:s'),
