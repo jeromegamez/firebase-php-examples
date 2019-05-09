@@ -1,11 +1,8 @@
 # Firebase Admin SDK Examples 
 
-Examples for using https://github.com/kreait/firebase-php
+Example Symfony Project using https://github.com/kreait/firebase-php 
 
-**Disclaimer:** This example application is just a Proof of Concept and doesn't 
-actively follow best practices for neither Symfony nor Firebase 😅
-
-<a href='https://ko-fi.com/jeromegamez' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://az743702.vo.msecnd.net/cdn/kofi2.png?v=0' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
+[![Discord](https://img.shields.io/discord/523866370778333184.svg?color=7289da&logo=discord)](https://discord.gg/nbgVfty)
 
 ## How to use
 
