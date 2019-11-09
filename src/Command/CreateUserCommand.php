@@ -2,8 +2,7 @@
 
 namespace App\Command;
 
-use Kreait\Firebase;
-use Kreait\Firebase\Exception\AuthException;
+use Kreait\Firebase\Auth;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -13,12 +12,12 @@ class CreateUserCommand extends Command
 {
     protected static $defaultName = 'app:create-user';
 
-    /** @var Firebase */
-    private $firebase;
+    /** @var Auth */
+    private $auth;
 
-    public function __construct(Firebase $firebase)
+    public function __construct(Auth $auth)
     {
-        $this->firebase = $firebase;
+        $this->auth = $auth;
 
         parent::__construct();
     }
@@ -48,13 +47,7 @@ class CreateUserCommand extends Command
             return null !== $value;
         });
 
-        try {
-            $user = $this->firebase->getAuth()->createUser($properties);
-        } catch (AuthException $e) {
-            $io->error($e->getMessage());
-
-            return 1;
-        }
+        $user = $this->auth->createUser($properties);
 
         $io->success('The following user has been stored:');
         $io->writeln(json_encode($user, JSON_PRETTY_PRINT));

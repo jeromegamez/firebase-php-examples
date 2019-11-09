@@ -2,31 +2,28 @@
 
 namespace App\Controller;
 
-use Kreait\Firebase;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Kreait\Firebase\Auth;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Routing\Annotation\Route;
 
-class UserController extends Controller
+class UserController extends AbstractController
 {
-    /**
-     * @var Firebase
-     */
-    private $firebase;
+    /** @var Auth */
+    private $auth;
 
-    public function __construct(Firebase $firebase)
+    public function __construct(Auth $firebase)
     {
-        $this->firebase = $firebase;
+        $this->auth = $firebase;
     }
 
     /**
      * @Route("/users", name="users")
      */
-    public function index(): \Symfony\Component\HttpFoundation\JsonResponse
+    public function index(): JsonResponse
     {
-        $users = iterator_to_array($this->firebase->getAuth()->listUsers());
-
         return $this->json([
-            'data' => $users,
+            'data' => iterator_to_array($this->auth->listUsers()),
         ]);
     }
 }

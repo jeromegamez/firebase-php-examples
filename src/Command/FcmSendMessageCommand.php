@@ -2,7 +2,7 @@
 
 namespace App\Command;
 
-use Kreait\Firebase;
+use Kreait\Firebase\Messaging;
 use Kreait\Firebase\Messaging\CloudMessage;
 use Kreait\Firebase\Messaging\MessageTarget;
 use Symfony\Component\Console\Command\Command;
@@ -15,12 +15,12 @@ class FcmSendMessageCommand extends Command
 {
     protected static $defaultName = 'app:fcm:send-message';
 
-    /** @var Firebase */
-    private $firebase;
+    /** @var Messaging */
+    private $messaging;
 
-    public function __construct(Firebase $firebase)
+    public function __construct(Messaging $messaging)
     {
-        $this->firebase = $firebase;
+        $this->messaging = $messaging;
 
         parent::__construct();
     }
@@ -34,8 +34,6 @@ class FcmSendMessageCommand extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $messaging = $this->firebase->getMessaging();
-
         $io = new SymfonyStyle($input, $output);
 
         $target = $io->choice('Please select a target', ['Topic', 'Condition', 'Registration Token']);
@@ -69,7 +67,7 @@ class FcmSendMessageCommand extends Command
             'body' => $io->ask('Please enter the body of your message'),
         ]);
 
-        $responseData = $messaging->send($message);
+        $responseData = $this->messaging->send($message);
 
         $io->success('The message has been sent and the API returned the following:');
         $io->writeln(json_encode($responseData, JSON_PRETTY_PRINT));

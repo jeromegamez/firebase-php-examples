@@ -1,4 +1,4 @@
 kreait_firebase:
   projects:
-    default:
-      alias: 'firebase'
+    my_project:
+      default: true

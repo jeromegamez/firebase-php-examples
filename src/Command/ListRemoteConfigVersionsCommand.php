@@ -2,7 +2,7 @@
 
 namespace App\Command;
 
-use Kreait\Firebase;
+use Kreait\Firebase\RemoteConfig;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
@@ -13,12 +13,12 @@ class ListRemoteConfigVersionsCommand extends Command
 {
     protected static $defaultName = 'app:remote-config:list-versions';
 
-    /** @var Firebase */
-    private $firebase;
+    /** @var RemoteConfig */
+    private $remoteConfig;
 
-    public function __construct(Firebase $firebase)
+    public function __construct(RemoteConfig $remoteConfig)
     {
-        $this->firebase = $firebase;
+        $this->remoteConfig = $remoteConfig;
 
         parent::__construct();
     }
@@ -42,7 +42,7 @@ class ListRemoteConfigVersionsCommand extends Command
             'limit' => $input->getOption('limit'),
         ]);
 
-        foreach ($this->firebase->getRemoteConfig()->listVersions($query) as $version) {
+        foreach ($this->remoteConfig->listVersions($query) as $version) {
             $rows[] = [
                 $version->versionNumber(),
                 $version->updatedAt()->format('Y-m-d H:i:s'),

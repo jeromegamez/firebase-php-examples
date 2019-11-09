@@ -2,29 +2,28 @@
 
 namespace App\Controller;
 
-use Kreait\Firebase;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Kreait\Firebase\Database;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Routing\Annotation\Route;
 
-class DatabaseController extends Controller
+class DatabaseController extends AbstractController
 {
-    /**
-     * @var Firebase
-     */
-    private $firebase;
+    /** @var Database */
+    private $database;
 
-    public function __construct(Firebase $firebase)
+    public function __construct(Database $firebase)
     {
-        $this->firebase = $firebase;
+        $this->database = $firebase;
     }
 
     /**
      * @Route("/database", name="database")
      */
-    public function index()
+    public function index(): JsonResponse
     {
         $reference = '/';
-        $snapshot = $this->firebase->getDatabase()->getReference($reference)->getSnapshot();
+        $snapshot = $this->database->getReference($reference)->getSnapshot();
 
         return $this->json([
             'reference' => $reference,
