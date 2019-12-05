@@ -784,23 +784,25 @@
         },
         {
             "name": "kreait/firebase-bundle",
-            "version": "1.7.0",
+            "version": "1.8.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kreait/firebase-bundle.git",
-                "reference": "ef2f9ef4fee9435d18fecc8e6f42267014f002f4"
+                "reference": "f1b4aa99e28f62721e917566560274376bc06ec1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kreait/firebase-bundle/zipball/ef2f9ef4fee9435d18fecc8e6f42267014f002f4",
-                "reference": "ef2f9ef4fee9435d18fecc8e6f42267014f002f4",
+                "url": "https://api.github.com/repos/kreait/firebase-bundle/zipball/f1b4aa99e28f62721e917566560274376bc06ec1",
+                "reference": "f1b4aa99e28f62721e917566560274376bc06ec1",
                 "shasum": ""
             },
             "require": {
                 "kreait/firebase-php": "^4.35",
-                "symfony/config": "^2.8|^3.4|^4.0|^5.0",
-                "symfony/dependency-injection": "^2.8.50|^3.4.26|^4.1.12|^5.0",
-                "symfony/http-kernel": "^2.8|^3.4|^4.0|^5.0"
+                "php": "^7.0",
+                "symfony/cache": "^3.4|^4.2|^5.0",
+                "symfony/config": "^3.4|^4.2|^5.0",
+                "symfony/dependency-injection": "^3.4.26|^4.2.7|^5.0",
+                "symfony/http-kernel": "^3.4|^4.2|^5.0"
             },
             "require-dev": {
                 "symfony/phpunit-bridge": "^5.0"
@@ -833,7 +835,7 @@
                 "symfony",
                 "symfony-bundle"
             ],
-            "time": "2019-11-26T15:13:25+00:00"
+            "time": "2019-12-04T11:00:07+00:00"
         },
         {
             "name": "kreait/firebase-php",
