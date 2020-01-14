@@ -2,3 +2,4 @@ kreait_firebase:
   projects:
     my_project:
       default: true
+      verifier_cache: cache.app.simple
