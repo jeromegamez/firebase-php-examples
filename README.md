@@ -32,6 +32,7 @@ bin/console app:create-user                  # Creates a Firebase user
 bin/console app:fcm:send-message             # Send an FCM message
 bin/console app:remote-config:list-versions  # Lists all remote config versions
 bin/console app:reset-project                # Reset parts of a Firebase project to its initial state
+bin/console app:upload-file                  # Upload a file to Firebase storage
 ```
 
 ## Deploying to Google Cloud Engine
