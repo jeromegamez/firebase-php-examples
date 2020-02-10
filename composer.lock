@@ -787,16 +787,16 @@
         },
         {
             "name": "kreait/firebase-bundle",
-            "version": "1.8.0",
+            "version": "1.9.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kreait/firebase-bundle.git",
-                "reference": "f1b4aa99e28f62721e917566560274376bc06ec1"
+                "reference": "78502a27e9a1e059f11c29ea0d8f7948fab5f660"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kreait/firebase-bundle/zipball/f1b4aa99e28f62721e917566560274376bc06ec1",
-                "reference": "f1b4aa99e28f62721e917566560274376bc06ec1",
+                "url": "https://api.github.com/repos/kreait/firebase-bundle/zipball/78502a27e9a1e059f11c29ea0d8f7948fab5f660",
+                "reference": "78502a27e9a1e059f11c29ea0d8f7948fab5f660",
                 "shasum": ""
             },
             "require": {
@@ -838,7 +838,7 @@
                 "symfony",
                 "symfony-bundle"
             ],
-            "time": "2019-12-04T11:00:07+00:00"
+            "time": "2020-02-09T16:25:03+00:00"
         },
         {
             "name": "kreait/firebase-php",
@@ -4044,12 +4044,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "af61943caaa512a4f00f1ee80e6e0cfec3fb63d1"
+                "reference": "7d271200b041d3e4be5927fdb03122508b9f8ebb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/af61943caaa512a4f00f1ee80e6e0cfec3fb63d1",
-                "reference": "af61943caaa512a4f00f1ee80e6e0cfec3fb63d1",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/7d271200b041d3e4be5927fdb03122508b9f8ebb",
+                "reference": "7d271200b041d3e4be5927fdb03122508b9f8ebb",
                 "shasum": ""
             },
             "conflict": {
@@ -4088,7 +4088,11 @@
                 "drupal/drupal": ">=7,<7.69|>=8,<8.7.11|>=8.8,<8.8.1",
                 "endroid/qr-code-bundle": "<3.4.2",
                 "erusev/parsedown": "<1.7.2",
-                "ezsystems/ezplatform-admin-ui": ">=1.3,<1.3.5|>=1.4,<1.4.4",
+                "ezsystems/ezfind-ls": ">=5.3,<5.3.6.1|>=5.4,<5.4.11.1|>=2017.12,<2017.12.0.1",
+                "ezsystems/ezplatform": ">=1.7,<1.7.9.1|>=1.13,<1.13.5.1|>=2.5,<2.5.4",
+                "ezsystems/ezplatform-admin-ui": ">=1.3,<1.3.5|>=1.4,<1.4.6",
+                "ezsystems/ezplatform-admin-ui-assets": ">=4,<4.2",
+                "ezsystems/ezplatform-user": ">=1,<1.0.1",
                 "ezsystems/ezpublish-kernel": ">=5.3,<5.3.12.1|>=5.4,<5.4.13.1|>=6,<6.7.9.1|>=6.8,<6.13.5.1|>=7,<7.2.4.1|>=7.3,<7.3.2.1",
                 "ezsystems/ezpublish-legacy": ">=5.3,<5.3.12.6|>=5.4,<5.4.12.3|>=2011,<2017.12.4.3|>=2018.6,<2018.6.1.4|>=2018.9,<2018.9.1.3",
                 "ezsystems/repository-forms": ">=2.3,<2.3.2.1",
@@ -4269,7 +4273,7 @@
                 }
             ],
             "description": "Prevents installation of composer packages with known security vulnerabilities: no API, simply require it",
-            "time": "2020-02-05T14:02:42+00:00"
+            "time": "2020-02-06T16:34:55+00:00"
         },
         {
             "name": "symfony/maker-bundle",
