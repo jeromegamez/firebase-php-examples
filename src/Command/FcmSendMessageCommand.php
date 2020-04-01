@@ -71,5 +71,7 @@ class FcmSendMessageCommand extends Command
 
         $io->success('The message has been sent and the API returned the following:');
         $io->writeln(json_encode($responseData, JSON_PRETTY_PRINT));
+
+        return 0;
     }
 }

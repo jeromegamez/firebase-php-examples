@@ -53,5 +53,7 @@ class ListRemoteConfigVersionsCommand extends Command
         }
 
         $io->table($headers, $rows);
+
+        return 0;
     }
 }

@@ -67,5 +67,7 @@ class ResetProjectCommand extends Command
             }
             $io->success('Done!');
         }
+
+        return 0;
     }
 }

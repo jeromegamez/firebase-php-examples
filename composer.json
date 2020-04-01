@@ -3,10 +3,10 @@
     "license": "MIT",
     "description": "Examples for using https://github.com/kreait/firebase-php",
     "require": {
-        "php": "^7.1.3",
+        "php": "^7.2.5",
         "ext-iconv": "*",
         "ext-json": "*",
-        "kreait/firebase-bundle": "^1.8",
+        "kreait/firebase-bundle": "^2.0",
         "sensio/framework-extra-bundle": "^5.5",
         "symfony/console": "^4.3",
         "symfony/dotenv": "^4.3",
@@ -26,7 +26,7 @@
         },
         "sort-packages": true,
         "platform": {
-            "php": "7.1.3"
+            "php": "7.2.5"
         }
     },
     "autoload": {
