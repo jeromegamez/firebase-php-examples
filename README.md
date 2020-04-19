@@ -3,6 +3,7 @@
 Example Symfony Project using https://github.com/kreait/firebase-php 
 
 [![Discord](https://img.shields.io/discord/523866370778333184.svg?color=7289da&logo=discord)](https://discord.gg/nbgVfty)
+[![Sponsor](https://img.shields.io/static/v1?logo=GitHub&label=Sponsor&message=%E2%9D%A4&color=ff69b4)](https://github.com/sponsors/jeromegamez)
 
 ## How to use
 
@@ -43,6 +44,5 @@ You can deploy the application to Google Cloud Engine with the following command
 gcloud app deploy
 ```
 
-The Firebase PHP SDK will autodiscover the credentials on the GCE environment to connect to the
-Firebase services. If you run into authorization issues, please consult 
-https://firebase-php.readthedocs.io/en/latest/troubleshooting.html#forbidden-errors
+Make sure to remove/override the credentials setting when running on GCE - the SDK SDK will 
+autodiscover the credentials on the GCE environment to connect to the Firebase services.

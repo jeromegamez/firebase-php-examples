@@ -1,5 +1,6 @@
 kreait_firebase:
   projects:
     my_project:
+      # Remove/Override the following line if running on GCE
       credentials: '%env(FIREBASE_CREDENTIALS)%'
       verifier_cache: cache.app.simple
