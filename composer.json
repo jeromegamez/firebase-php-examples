@@ -1,24 +1,21 @@
 {
     "name": "gamez/firebase-examples",
     "license": "MIT",
-    "description": "Examples for using https://github.com/kreait/firebase-php",
+    "description": "Symfony 5 example application integrating https://github.com/kreait/firebase-php",
     "require": {
         "php": "^7.2.5",
         "ext-iconv": "*",
         "ext-json": "*",
-        "kreait/firebase-bundle": "^2.0",
+        "kreait/firebase-bundle": "^2.1",
         "sensio/framework-extra-bundle": "^5.5",
-        "symfony/console": "^4.3",
-        "symfony/dotenv": "^4.3",
-        "symfony/flex": "^1.4",
-        "symfony/framework-bundle": "^4.3",
-        "symfony/web-server-bundle": "^4.3",
-        "symfony/yaml": "^4.3"
+        "symfony/console": "^5.0",
+        "symfony/dotenv": "^5.0",
+        "symfony/flex": "^1.8.4",
+        "symfony/yaml": "^5.0"
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^2.16",
-        "roave/security-advisories": "dev-master",
-        "symfony/maker-bundle": "^1.14"
+        "symfony/maker-bundle": "^1.19"
     },
     "config": {
         "preferred-install": {
