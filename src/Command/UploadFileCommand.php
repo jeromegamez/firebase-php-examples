@@ -5,7 +5,6 @@ namespace App\Command;
 use DateTimeImmutable;
 use Kreait\Firebase\Storage;
 use Symfony\Component\Console\Command\Command;
-use Symfony\Component\Console\Exception\RuntimeException;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
