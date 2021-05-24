@@ -3,7 +3,7 @@
     "license": "MIT",
     "description": "Symfony 5 example application integrating https://github.com/kreait/firebase-php",
     "require": {
-        "php": "^7.2.9",
+        "php": "^7.4|^8.0",
         "ext-iconv": "*",
         "ext-json": "*",
         "kreait/firebase-bundle": "^2.3",
@@ -23,7 +23,7 @@
         },
         "sort-packages": true,
         "platform": {
-            "php": "7.2.9"
+            "php": "7.4.19"
         }
     },
     "autoload": {
