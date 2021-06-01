@@ -3,7 +3,7 @@
 $finder = PhpCsFixer\Finder::create()
     ->in(['src']);
 
-return PhpCsFixer\Config::create()
+return (new PhpCsFixer\Config)
     ->setUsingCache(true)
     ->setRules([
         '@Symfony' => true,
