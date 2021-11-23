@@ -2,7 +2,7 @@
 
 namespace App\Command;
 
-use Kreait\Firebase\RemoteConfig;
+use Kreait\Firebase\Contract\RemoteConfig;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
@@ -13,8 +13,7 @@ class ListRemoteConfigVersionsCommand extends Command
 {
     protected static $defaultName = 'app:remote-config:list-versions';
 
-    /** @var RemoteConfig */
-    private $remoteConfig;
+    private RemoteConfig $remoteConfig;
 
     public function __construct(RemoteConfig $remoteConfig)
     {

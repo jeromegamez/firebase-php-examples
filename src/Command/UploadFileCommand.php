@@ -3,7 +3,7 @@
 namespace App\Command;
 
 use DateTimeImmutable;
-use Kreait\Firebase\Storage;
+use Kreait\Firebase\Contract\Storage;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
@@ -16,11 +16,8 @@ class UploadFileCommand extends Command
 {
     protected static $defaultName = 'app:upload-file';
 
-    /** @var Storage */
-    private $storage;
-
-    /** @var Filesystem */
-    private $filesystem;
+    private Storage $storage;
+    private Filesystem $filesystem;
 
     protected function configure()
     {

@@ -2,15 +2,14 @@
 
 namespace App\Controller;
 
-use Kreait\Firebase\Database;
+use Kreait\Firebase\Contract\Database;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Routing\Annotation\Route;
 
-class DatabaseController extends AbstractController
+final class DatabaseController extends AbstractController
 {
-    /** @var Database */
-    private $database;
+    private Database $database;
 
     public function __construct(Database $firebase)
     {

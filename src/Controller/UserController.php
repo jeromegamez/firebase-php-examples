@@ -2,15 +2,14 @@
 
 namespace App\Controller;
 
-use Kreait\Firebase\Auth;
+use Kreait\Firebase\Contract\Auth;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Routing\Annotation\Route;
 
-class UserController extends AbstractController
+final class UserController extends AbstractController
 {
-    /** @var Auth */
-    private $auth;
+    private Auth $auth;
 
     public function __construct(Auth $firebase)
     {

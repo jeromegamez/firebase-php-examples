@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7a5e93a65427999a90165d366a06ce4a",
+    "content-hash": "b1bc30e35a0527235eca9ba389bd0066",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -862,25 +862,25 @@
         },
         {
             "name": "kreait/firebase-bundle",
-            "version": "2.5.0",
+            "version": "2.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kreait/firebase-bundle.git",
-                "reference": "7bc31f73b962a3e3877412133d17d1481b7b5c5d"
+                "reference": "357e471293ff5a1605e181213d943379ad43cc8c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kreait/firebase-bundle/zipball/7bc31f73b962a3e3877412133d17d1481b7b5c5d",
-                "reference": "7bc31f73b962a3e3877412133d17d1481b7b5c5d",
+                "url": "https://api.github.com/repos/kreait/firebase-bundle/zipball/357e471293ff5a1605e181213d943379ad43cc8c",
+                "reference": "357e471293ff5a1605e181213d943379ad43cc8c",
                 "shasum": ""
             },
             "require": {
-                "kreait/firebase-php": "^5.17.1",
-                "php": "^7.2|^8.0",
-                "symfony/cache": "^3.4|^4.2.12|^5.0",
-                "symfony/config": "^3.4.26|^4.2|^5.0",
-                "symfony/dependency-injection": "^3.4.26|^4.2.7|^5.0",
-                "symfony/http-kernel": "^3.4|^4.2|^5.0"
+                "kreait/firebase-php": "^5.25.0",
+                "php": "^7.4|^8.0",
+                "symfony/cache": "^4.4|^5.3",
+                "symfony/config": "^4.4|^5.3",
+                "symfony/dependency-injection": "^4.4|^5.3",
+                "symfony/http-kernel": "^4.4|^5.3"
             },
             "require-dev": {
                 "friendsofphp/php-cs-fixer": "^2.16",
@@ -916,7 +916,7 @@
             ],
             "support": {
                 "issues": "https://github.com/kreait/firebase-bundle/issues",
-                "source": "https://github.com/kreait/firebase-bundle/tree/2.5.0"
+                "source": "https://github.com/kreait/firebase-bundle/tree/2.6.0"
             },
             "funding": [
                 {
@@ -924,7 +924,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-10-08T14:08:20+00:00"
+            "time": "2021-11-23T22:59:45+00:00"
         },
         {
             "name": "kreait/firebase-php",

@@ -2,7 +2,7 @@
 
 namespace App\Command;
 
-use Kreait\Firebase\Auth;
+use Kreait\Firebase\Contract\Auth;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -12,8 +12,7 @@ class CreateUserCommand extends Command
 {
     protected static $defaultName = 'app:create-user';
 
-    /** @var Auth */
-    private $auth;
+    private Auth $auth;
 
     public function __construct(Auth $auth)
     {
@@ -24,12 +23,10 @@ class CreateUserCommand extends Command
 
     protected function configure()
     {
-        $this
-            ->setDescription('Creates a Firebase user')
-        ;
+        $this->setDescription('Creates a Firebase user');
     }
 
-    protected function execute(InputInterface $input, OutputInterface $output)
+    protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $io = new SymfonyStyle($input, $output);
 

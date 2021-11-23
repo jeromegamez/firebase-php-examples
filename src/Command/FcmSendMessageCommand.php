@@ -2,7 +2,7 @@
 
 namespace App\Command;
 
-use Kreait\Firebase\Messaging;
+use Kreait\Firebase\Contract\Messaging;
 use Kreait\Firebase\Messaging\CloudMessage;
 use Kreait\Firebase\Messaging\MessageTarget;
 use Symfony\Component\Console\Command\Command;
@@ -15,8 +15,7 @@ class FcmSendMessageCommand extends Command
 {
     protected static $defaultName = 'app:fcm:send-message';
 
-    /** @var Messaging */
-    private $messaging;
+    private Messaging $messaging;
 
     public function __construct(Messaging $messaging)
     {
@@ -27,9 +26,7 @@ class FcmSendMessageCommand extends Command
 
     protected function configure()
     {
-        $this
-            ->setDescription('Send an FCM message')
-        ;
+        $this->setDescription('Send an FCM message');
     }
 
     protected function execute(InputInterface $input, OutputInterface $output)

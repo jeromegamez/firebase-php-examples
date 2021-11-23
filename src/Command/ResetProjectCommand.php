@@ -2,10 +2,10 @@
 
 namespace App\Command;
 
-use Kreait\Firebase\Auth;
-use Kreait\Firebase\Database;
+use Kreait\Firebase\Contract\Auth;
+use Kreait\Firebase\Contract\Database;
+use Kreait\Firebase\Contract\Storage;
 use Kreait\Firebase\Database\RuleSet;
-use Kreait\Firebase\Storage;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -15,14 +15,9 @@ class ResetProjectCommand extends Command
 {
     protected static $defaultName = 'app:reset-project';
 
-    /** @var Auth */
-    private $auth;
-
-    /** @var Database */
-    private $database;
-
-    /** @var Storage */
-    private $storage;
+    private Auth $auth;
+    private Database $database;
+    private Storage $storage;
 
     public function __construct(Auth $auth, Database $database, Storage $storage)
     {
@@ -35,9 +30,7 @@ class ResetProjectCommand extends Command
 
     protected function configure()
     {
-        $this
-            ->setDescription('Reset parts of a Firebase project to its initial state')
-        ;
+        $this->setDescription('Reset parts of a Firebase project to its initial state');
     }
 
     protected function execute(InputInterface $input, OutputInterface $output)
@@ -66,6 +59,7 @@ class ResetProjectCommand extends Command
 
             foreach ($this->auth->listUsers() as $user) {
                 $this->auth->deleteUser($user->uid);
+                $io->writeln('Deleted user with ID '.$user->uid);
                 ++$userCount;
             }
 
