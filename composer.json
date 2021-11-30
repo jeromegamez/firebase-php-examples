@@ -6,15 +6,14 @@
         "php": "^7.4|^8.0",
         "ext-iconv": "*",
         "ext-json": "*",
-        "kreait/firebase-bundle": "^2.6",
-        "sensio/framework-extra-bundle": "^6.1",
-        "symfony/console": "^5.1.8",
-        "symfony/dotenv": "^5.1.8",
-        "symfony/flex": "^1.9.10",
-        "symfony/yaml": "^5.1.8"
+        "kreait/firebase-bundle": "^3.0",
+        "sensio/framework-extra-bundle": "^6.2",
+        "symfony/console": "^6.0",
+        "symfony/dotenv": "^6.0",
+        "symfony/flex": "^2.0.1",
+        "symfony/yaml": "^6.0"
     },
     "require-dev": {
-        "friendsofphp/php-cs-fixer": "^3.0",
         "symfony/maker-bundle": "^1.22"
     },
     "config": {
@@ -23,7 +22,7 @@
         },
         "sort-packages": true,
         "platform": {
-            "php": "7.4.19"
+            "php": "8.0.2"
         }
     },
     "autoload": {

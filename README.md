@@ -1,6 +1,6 @@
 # Firebase Admin SDK Examples 
 
-Example Symfony 5 Project using https://github.com/kreait/firebase-php 
+Example Symfony 6 Project using https://github.com/kreait/firebase-php 
 
 [![Sponsor](https://img.shields.io/static/v1?logo=GitHub&label=Sponsor&message=%E2%9D%A4&color=ff69b4)](https://github.com/sponsors/jeromegamez)
 

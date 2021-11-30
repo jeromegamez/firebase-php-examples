@@ -3,4 +3,7 @@ kreait_firebase:
     my_project:
       # Remove/Override the following line if running on GCE
       credentials: '%env(FIREBASE_CREDENTIALS)%'
+      # database_uri: 'https://my-project-default-rtdb.firebaseio.com'
+      # or, depending on your Firebase project configuration
+      # database_uri: 'https://my-project-default-rtdb.europe-west1.firebasedatabase.app'
       verifier_cache: cache.app
