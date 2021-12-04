@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "93ea60146025d0e6bdb32063a82ad330",
+    "content-hash": "b54d9fff1f4a525832c0b893e5ae6343",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -862,16 +862,16 @@
         },
         {
             "name": "kreait/firebase-bundle",
-            "version": "3.0.0",
+            "version": "3.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kreait/firebase-bundle.git",
-                "reference": "52b29c75d516ec46227a4cca76f5a2f44ee48a0b"
+                "reference": "8157334028f51e11df18827e243f981a89620345"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kreait/firebase-bundle/zipball/52b29c75d516ec46227a4cca76f5a2f44ee48a0b",
-                "reference": "52b29c75d516ec46227a4cca76f5a2f44ee48a0b",
+                "url": "https://api.github.com/repos/kreait/firebase-bundle/zipball/8157334028f51e11df18827e243f981a89620345",
+                "reference": "8157334028f51e11df18827e243f981a89620345",
                 "shasum": ""
             },
             "require": {
@@ -915,7 +915,7 @@
             ],
             "support": {
                 "issues": "https://github.com/kreait/firebase-bundle/issues",
-                "source": "https://github.com/kreait/firebase-bundle/tree/3.0.0"
+                "source": "https://github.com/kreait/firebase-bundle/tree/3.1.0"
             },
             "funding": [
                 {
@@ -923,7 +923,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-11-30T22:59:57+00:00"
+            "time": "2021-12-04T13:24:32+00:00"
         },
         {
             "name": "kreait/firebase-php",

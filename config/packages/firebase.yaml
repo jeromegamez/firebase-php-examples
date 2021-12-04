@@ -7,3 +7,4 @@ kreait_firebase:
       # or, depending on your Firebase project configuration
       # database_uri: 'https://my-project-default-rtdb.europe-west1.firebasedatabase.app'
       verifier_cache: cache.app
+      auth_token_cache: cache.app
