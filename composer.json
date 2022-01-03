@@ -23,6 +23,9 @@
         "sort-packages": true,
         "platform": {
             "php": "8.0.2"
+        },
+        "allow-plugins": {
+            "symfony/flex": true
         }
     },
     "autoload": {
