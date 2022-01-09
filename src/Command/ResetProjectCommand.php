@@ -37,24 +37,24 @@ class ResetProjectCommand extends Command
     {
         $io = new SymfonyStyle($input, $output);
 
-        if ($io->confirm('Reset realtime database rules?')) {
+        if ($io->confirm('Reset realtime database rules?', false)) {
             $this->database->updateRules(RuleSet::default());
             $io->success('Realtime database rules have been reset.');
         }
 
-        if ($io->confirm('Empty realtime database?')) {
+        if ($io->confirm('Empty realtime database?', false)) {
             $this->database->getReference('/')->remove();
             $io->success('Realtime database has been emptied');
         }
 
-        if ($io->confirm('Empty cloud storage?')) {
+        if ($io->confirm('Empty cloud storage?', false)) {
             foreach ($this->storage->getBucket()->objects() as $object) {
                 $object->delete();
             }
             $io->success('Cloud Storage has been emptied!');
         }
 
-        if ($io->confirm('Delete all users?')) {
+        if ($io->confirm('Delete all users?', false)) {
             $userCount = 0;
 
             foreach ($this->auth->listUsers() as $user) {
