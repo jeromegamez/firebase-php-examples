@@ -6,7 +6,7 @@
         "php": "^7.4|^8.0",
         "ext-iconv": "*",
         "ext-json": "*",
-        "kreait/firebase-bundle": "^3.1",
+        "kreait/firebase-bundle": "^4.0",
         "sensio/framework-extra-bundle": "^6.2",
         "symfony/console": "^6.0",
         "symfony/dotenv": "^6.0",

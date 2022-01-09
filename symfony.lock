@@ -1,4 +1,7 @@
 {
+    "beste/clock": {
+        "version": "1.0.0"
+    },
     "doctrine/annotations": {
         "version": "1.0",
         "recipe": {
@@ -49,9 +52,6 @@
     },
     "guzzlehttp/psr7": {
         "version": "1.4.2"
-    },
-    "kreait/clock": {
-        "version": "1.0.0"
     },
     "kreait/firebase-bundle": {
         "version": "1.0.0"
