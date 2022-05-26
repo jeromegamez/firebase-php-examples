@@ -2,6 +2,9 @@
     "beste/clock": {
         "version": "1.0.0"
     },
+    "beste/json": {
+        "version": "1.0.0"
+    },
     "doctrine/annotations": {
         "version": "1.0",
         "recipe": {
@@ -10,9 +13,6 @@
             "version": "1.0",
             "ref": "cb4152ebcadbe620ea2261da1a1c5a9b8cea7672"
         }
-    },
-    "doctrine/common": {
-        "version": "v2.9.0"
     },
     "doctrine/inflector": {
         "version": "v1.3.0"
@@ -25,12 +25,6 @@
     },
     "firebase/php-jwt": {
         "version": "v5.0.0"
-    },
-    "giggsey/libphonenumber-for-php": {
-        "version": "8.9.3"
-    },
-    "giggsey/locale": {
-        "version": "1.5"
     },
     "google/auth": {
         "version": "v1.3.0"
@@ -76,9 +70,6 @@
     },
     "nikic/php-parser": {
         "version": "v4.0.1"
-    },
-    "php": {
-        "version": "7.2.5"
     },
     "psr/cache": {
         "version": "1.0.1"
